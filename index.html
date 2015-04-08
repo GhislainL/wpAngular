@@ -1,0 +1,53 @@
+<html ng-app="wpApp">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<script src="./app/js/angular.min.js"></script>
+	<script src="./app/js/angular-route.min.js"></script>
+	<script src="./app/js/angular-resource.min.js"></script>
+	<script src="./app/js/angular-sanitize.min.js"></script>
+	
+	<script src="./app/app.js"></script>
+	<script src="./app/controllers/controllers.js"></script>
+	<script src="./app/services/services.js"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#/">(Angular) Ghislain's blog</a>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav" ng-controller="CategoriesListCrtl">
+	        <li ng-repeat="category in categories" ng-class="{ active: isActive('/categories/{{category.slug}}')}">
+	        	<a href="#/categories/{{category.slug}}">{{category.name}}</a>
+	        </li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+	<div class="container">
+		::before
+		<div ng-view></div>
+	</div>
+    
+</body>
+</html>
