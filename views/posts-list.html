@@ -1,31 +1,20 @@
 <div class="page-header">
   		<h1>POSTS</h1>
-  		{{status}}
 	</div>
-<div ng-repeat="post in posts" ng-class="row|($index % 2 == 0)">
-	<!--<ng-include class="col-xs-6" src="'views/items/item'"></ng-include> 
-	<div class="col-xs-6">{{post.title}}</div>-->
+<div ng-repeat="post in posts" ng-class-even="'row'">
 	<div class="col-xs-6">
 		<div class="panel panel-default"/>
 			<div class="panel-heading">
-				<h3 class="panel-title">{{post.title}} - {{post.date}}</h3>
+				<h3 class="panel-title">{{post.title}} - {{post.date | date: 'dd MMMM yyyy'}}</h3>
 			</div>
 			<div class="panel-body">
-				<!--<div style="position:relative; float: left; width:10%"><img data-holder-rendered="true" src="{{post.featured_image}}" style="width: 100px; height: 100px;" class="img-thumbnail" alt="{{post.title}}"></div>
-				<div style="position:relative; float: left; width:90%">
-					<span ng-bind-html="post.excerpt | sanitize"></span>
-					<a class="btn btn-sm btn-default" href="#/posts/{{post.ID}}" role="button">Lire l'article</a>
-				</div>-->
-
-
 				<div class="media-left media-middle">
 			        <a href="#">
 			          <img data-holder-rendered="true" src="{{post.featured_image}}" class="media-object" style="width: 100px; height: 100px;" alt="{{post.title}}">
 			        </a>
 			      </div>
 			      <div class="media-body">
-			        <h4 id="middle-aligned-media" class="media-heading">{{post.title}}<a class="anchorjs-link" href="#middle-aligned-media"><span class="anchorjs-icon"></span></a></h4>
-			        <span ng-bind-html="post.excerpt | sanitize"></span>
+			        <span ng-bind-html="post.excerpt"></span>
 			        <a class="btn btn-sm btn-default pull-right" href="#/posts/{{post.ID}}" role="button">Lire l'article</a>
 			      </div>
 			</div>

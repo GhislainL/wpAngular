@@ -32,3 +32,9 @@ wpApp.config(['$routeProvider',
       });
   }]);
 
+ wpApp.directive('wpNavbar', function() {
+  return {
+    restrict: 'E',
+    templateUrl : 'views/navbar.html'
+  };
+});

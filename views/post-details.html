@@ -2,5 +2,13 @@
 	<div class="page-header">
   		<h1>{{post.title}}</h1>
 	</div>
-	<div ng-bind-html="post.content | sanitize"></div>
+	<div><p>
+		{{post.author.name}} - {{post.date | date: 'dd MMMM yyyy'}}</p>
+	</div>
+	<div><p>
+		Tags : <span class="label label-primary" style="margin-right:5px; display:inline-block" ng-repeat="tag in post.tags" >{{tag.name}}</span>  
+		</p>
+	</div>	
+	
+	<div ng-bind-html="post.content"></div>
 </div>

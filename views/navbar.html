@@ -1,0 +1,7 @@
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  <ul class="nav navbar-nav" ng-controller="CategoriesListCrtl">
+    <li ng-repeat="category in categories" ng-class="{ active: isActive('/categories/{{category.slug}}')}">
+    	<a href="#/categories/{{category.slug}}">{{category.name}}</a>
+    </li>
+  </ul>
+</div><!-- /.navbar-collapse -->
